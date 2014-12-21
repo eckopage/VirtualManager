@@ -1,0 +1,35 @@
+﻿@model VM.DataAccessLayer.EDM.UserAssociationTable
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_CoreAdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserAssociationTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ChiefUserGuid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChiefUserGuid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeGuid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeGuid)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,16 @@
+C:\Development\VM\VirtualManager\Main\VirtualManager\libMvcReCaptcha\obj\Debug\libMvcReCaptcha.csprojResolveAssemblyReference.cache
+C:\Development\VM\VirtualManager\Main\VirtualManager\libMvcReCaptcha\bin\Debug\libMvcReCaptcha.dll
+C:\Development\VM\VirtualManager\Main\VirtualManager\libMvcReCaptcha\bin\Debug\libMvcReCaptcha.pdb
+C:\Development\VM\VirtualManager\Main\VirtualManager\libMvcReCaptcha\bin\Debug\Recaptcha.dll
+C:\Development\VM\VirtualManager\Main\VirtualManager\libMvcReCaptcha\bin\Debug\System.Web.Mvc.dll
+C:\Development\VM\VirtualManager\Main\VirtualManager\libMvcReCaptcha\bin\Debug\WebActivatorEx.dll
+C:\Development\VM\VirtualManager\Main\VirtualManager\libMvcReCaptcha\bin\Debug\System.Web.Mvc.xml
+C:\Development\VM\VirtualManager\Main\VirtualManager\libMvcReCaptcha\obj\Debug\libMvcReCaptcha.dll
+C:\Development\VM\VirtualManager\Main\VirtualManager\libMvcReCaptcha\obj\Debug\libMvcReCaptcha.pdb
+C:\Development\virtual-manager\VirtualManager\libMvcReCaptcha\bin\Debug\libMvcReCaptcha.dll
+C:\Development\virtual-manager\VirtualManager\libMvcReCaptcha\bin\Debug\libMvcReCaptcha.pdb
+C:\Development\virtual-manager\VirtualManager\libMvcReCaptcha\bin\Debug\Recaptcha.dll
+C:\Development\virtual-manager\VirtualManager\libMvcReCaptcha\bin\Debug\WebActivatorEx.dll
+C:\Development\virtual-manager\VirtualManager\libMvcReCaptcha\obj\Debug\libMvcReCaptcha.csprojResolveAssemblyReference.cache
+C:\Development\virtual-manager\VirtualManager\libMvcReCaptcha\obj\Debug\libMvcReCaptcha.dll
+C:\Development\virtual-manager\VirtualManager\libMvcReCaptcha\obj\Debug\libMvcReCaptcha.pdb

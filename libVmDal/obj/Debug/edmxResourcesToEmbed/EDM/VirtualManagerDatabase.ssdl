@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VirtualManagerDatabase.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccountClaimsTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar(max)" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+    <Property Name="IdentityUser_Id" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="AccountLoginTable">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="IdentityUser_Id" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="AccountRoleTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" />
+    <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountUserRoleTable">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="IdentityUser_Id" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="AlmostAccountTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RegistrationDateTime" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LinkToken" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CountryZoneTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryZoneName" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="DepartmentTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="FileRepositoryTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="FileRepoName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="FilesId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FileTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="550" Nullable="false" />
+    <Property Name="Extension" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="FileSize" Type="int" Nullable="false" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="UploadedByUserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
+    <Property Name="PathToFile" Type="nvarchar" MaxLength="1000" />
+    <Property Name="IsFolder" Type="bit" />
+  </EntityType>
+  <EntityType Name="FoodDrinkProjectAssignment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="FoodDrinkId" Type="int" Nullable="false" />
+    <Property Name="FoodDrinkPrice" Type="float" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="IsEnabled" Type="bit" Nullable="false" />
+    <Property Name="HowMany" Type="float" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="FoodDrinkTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="250" />
+    <Property Name="ShortNameProduct" Type="nvarchar" MaxLength="50" />
+    <Property Name="MeasureId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="PhotoPath" Type="nvarchar" MaxLength="500" />
+    <Property Name="ProviderId" Type="int" Nullable="false" />
+    <Property Name="HowMuch" Type="float" />
+  </EntityType>
+  <EntityType Name="Key">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MeasureTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShortName" Type="nvarchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="WorkAgreementId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProviderFoodCoastTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="250" />
+    <Property Name="ProviderName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProviderSurname" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="150" />
+    <Property Name="CityCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Street" Type="nvarchar" MaxLength="350" />
+    <Property Name="No" Type="int" />
+    <Property Name="BankAccountNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TemporaryTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkAgreementTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgreeementType" Type="nvarchar" MaxLength="500" />
+    <Property Name="Cost" Type="int" />
+    <Property Name="PerTime" Type="nchar" MaxLength="10" />
+    <Property Name="AgreementTimeFrom" Type="date" />
+    <Property Name="AgreementTimeTo" Type="date" />
+    <Property Name="Description" Type="text" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkerGroupTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ModuleProjectAssociation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="ModuleId" Type="int" Nullable="false" />
+    <Property Name="TurnOn" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModuleTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ModuleName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="ModuleDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="ModuleDLLname" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Version" Type="nvarchar" MaxLength="10" />
+    <Property Name="DeveloperName" Type="nvarchar" MaxLength="250" />
+    <Property Name="StableVersion" Type="bit" Nullable="false" />
+    <Property Name="UpdatedDLL" Type="datetime" />
+    <Property Name="PathToDLL" Type="nchar" MaxLength="600" />
+  </EntityType>
+  <EntityType Name="ProjectTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ProjectDescription" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Removed" Type="datetime" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
+    <Property Name="FileRepositoryId" Type="int" />
+    <Property Name="AvailableModulesId" Type="int" />
+  </EntityType>
+  <EntityType Name="ProjectUserAssociateTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="CreatedTime" Type="datetime" Nullable="false" />
+    <Property Name="RemovedTime" Type="datetime" />
+    <Property Name="Locked" Type="bit" Nullable="false" />
+    <Property Name="IsOwner" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserAssociationTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChiefUserGuid" Type="nchar" MaxLength="10" />
+    <Property Name="EmployeeGuid" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="UserDetails">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="250" />
+    <Property Name="UserSurname" Type="nvarchar" MaxLength="250" />
+    <Property Name="BornDate" Type="datetime" />
+    <Property Name="PESEL" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="250" />
+    <Property Name="CountryZone" Type="int" />
+    <Property Name="Gmina" Type="nvarchar" MaxLength="250" />
+    <Property Name="Street" Type="nvarchar" MaxLength="250" />
+    <Property Name="NoHome" Type="nvarchar" MaxLength="5" />
+    <Property Name="NoLocal" Type="nvarchar" MaxLength="5" />
+    <Property Name="City" Type="nvarchar" MaxLength="250" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="UrzadSkarbowyNazwa" Type="nvarchar" MaxLength="1000" />
+    <Property Name="SymbolUs" Type="nvarchar" MaxLength="10" />
+    <Property Name="UserEmailContact" Type="nvarchar" MaxLength="128" />
+    <Property Name="BankBillNo" Type="nvarchar" MaxLength="26" />
+    <Property Name="NFZ_No" Type="nvarchar" MaxLength="3" />
+    <Property Name="WorkersGroup" Type="int" Nullable="false" />
+    <Property Name="Department" Type="int" />
+  </EntityType>
+  <Association Name="FK_dbo_AccountClaimsTable_dbo_AccountTable_IdentityUser_Id">
+    <End Role="AccountTable" Type="Self.AccountTable" Multiplicity="0..1" />
+    <End Role="AccountClaimsTable" Type="Self.AccountClaimsTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountClaimsTable">
+        <PropertyRef Name="IdentityUser_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AccountLoginTable_dbo_AccountTable_IdentityUser_Id">
+    <End Role="AccountTable" Type="Self.AccountTable" Multiplicity="0..1" />
+    <End Role="AccountLoginTable" Type="Self.AccountLoginTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountLoginTable">
+        <PropertyRef Name="IdentityUser_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AccountUserRoleTable_dbo_AccountRoleTable_RoleId">
+    <End Role="AccountRoleTable" Type="Self.AccountRoleTable" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AccountUserRoleTable" Type="Self.AccountUserRoleTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountRoleTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountUserRoleTable">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AccountUserRoleTable_dbo_AccountTable_IdentityUser_Id">
+    <End Role="AccountTable" Type="Self.AccountTable" Multiplicity="0..1" />
+    <End Role="AccountUserRoleTable" Type="Self.AccountUserRoleTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountUserRoleTable">
+        <PropertyRef Name="IdentityUser_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_FileTable_FileRepositoryTable' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_FileTable_FileRepositoryTable" />-->
+  <Association Name="FK_FoodDrinkProjectAssignment_FoodDrinkTable">
+    <End Role="FoodDrinkTable" Type="Self.FoodDrinkTable" Multiplicity="1" />
+    <End Role="FoodDrinkProjectAssignment" Type="Self.FoodDrinkProjectAssignment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodDrinkTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FoodDrinkProjectAssignment">
+        <PropertyRef Name="FoodDrinkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FoodDrinkProjectAssignment_ProjectTable">
+    <End Role="ProjectTable" Type="Self.ProjectTable" Multiplicity="1" />
+    <End Role="FoodDrinkProjectAssignment" Type="Self.FoodDrinkProjectAssignment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FoodDrinkProjectAssignment">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FoodDrinkTable_MeasureTable">
+    <End Role="MeasureTable" Type="Self.MeasureTable" Multiplicity="1" />
+    <End Role="FoodDrinkTable" Type="Self.FoodDrinkTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MeasureTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FoodDrinkTable">
+        <PropertyRef Name="MeasureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FoodDrinkTable_ProviderFoodCoastTable">
+    <End Role="ProviderFoodCoastTable" Type="Self.ProviderFoodCoastTable" Multiplicity="1" />
+    <End Role="FoodDrinkTable" Type="Self.FoodDrinkTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProviderFoodCoastTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FoodDrinkTable">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleProjectAssociation_ModuleTable">
+    <End Role="ModuleTable" Type="Self.ModuleTable" Multiplicity="1" />
+    <End Role="ModuleProjectAssociation" Type="Self.ModuleProjectAssociation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModuleTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ModuleProjectAssociation">
+        <PropertyRef Name="ModuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleProjectAssociation_ProjectTable">
+    <End Role="ProjectTable" Type="Self.ProjectTable" Multiplicity="1" />
+    <End Role="ModuleProjectAssociation" Type="Self.ModuleProjectAssociation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ModuleProjectAssociation">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaymentTable_AccountTable">
+    <End Role="AccountTable" Type="Self.AccountTable" Multiplicity="1" />
+    <End Role="PaymentTable" Type="Self.PaymentTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PaymentTable">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaymentTable_ProjectTable">
+    <End Role="ProjectTable" Type="Self.ProjectTable" Multiplicity="1" />
+    <End Role="PaymentTable" Type="Self.PaymentTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PaymentTable">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaymentTable_WorkAgreementTable">
+    <End Role="WorkAgreementTable" Type="Self.WorkAgreementTable" Multiplicity="1" />
+    <End Role="PaymentTable" Type="Self.PaymentTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkAgreementTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PaymentTable">
+        <PropertyRef Name="WorkAgreementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectTable_FileRepositoryTable">
+    <End Role="FileRepositoryTable" Type="Self.FileRepositoryTable" Multiplicity="0..1" />
+    <End Role="ProjectTable" Type="Self.ProjectTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FileRepositoryTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTable">
+        <PropertyRef Name="FileRepositoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectUserAssociateTable_AccountTable">
+    <End Role="AccountTable" Type="Self.AccountTable" Multiplicity="1" />
+    <End Role="ProjectUserAssociateTable" Type="Self.ProjectUserAssociateTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectUserAssociateTable">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectUserAssociateTable_UserDetails">
+    <End Role="ProjectTable" Type="Self.ProjectTable" Multiplicity="1" />
+    <End Role="ProjectUserAssociateTable" Type="Self.ProjectUserAssociateTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectUserAssociateTable">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetails_AccountTable">
+    <End Role="WorkerGroupTable" Type="Self.WorkerGroupTable" Multiplicity="1" />
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkerGroupTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetails">
+        <PropertyRef Name="WorkersGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetails_CountryZoneTable">
+    <End Role="CountryZoneTable" Type="Self.CountryZoneTable" Multiplicity="0..1" />
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryZoneTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetails">
+        <PropertyRef Name="CountryZone" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetails_DepartmentTable">
+    <End Role="DepartmentTable" Type="Self.DepartmentTable" Multiplicity="0..1" />
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DepartmentTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetails">
+        <PropertyRef Name="Department" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="VirtualManagerDatabaseStoreContainer">
+    <EntitySet Name="AccountClaimsTable" EntityType="Self.AccountClaimsTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountLoginTable" EntityType="Self.AccountLoginTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountRoleTable" EntityType="Self.AccountRoleTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountTable" EntityType="Self.AccountTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountUserRoleTable" EntityType="Self.AccountUserRoleTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AlmostAccountTable" EntityType="Self.AlmostAccountTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CountryZoneTable" EntityType="Self.CountryZoneTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DepartmentTable" EntityType="Self.DepartmentTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FileRepositoryTable" EntityType="Self.FileRepositoryTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FileTable" EntityType="Self.FileTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FoodDrinkProjectAssignment" EntityType="Self.FoodDrinkProjectAssignment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FoodDrinkTable" EntityType="Self.FoodDrinkTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Key" EntityType="Self.Key" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MeasureTable" EntityType="Self.MeasureTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentTable" EntityType="Self.PaymentTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProviderFoodCoastTable" EntityType="Self.ProviderFoodCoastTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TemporaryTable" EntityType="Self.TemporaryTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkAgreementTable" EntityType="Self.WorkAgreementTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkerGroupTable" EntityType="Self.WorkerGroupTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModuleProjectAssociation" EntityType="Self.ModuleProjectAssociation" Schema="module" store:Type="Tables" />
+    <EntitySet Name="ModuleTable" EntityType="Self.ModuleTable" Schema="module" store:Type="Tables" />
+    <EntitySet Name="ProjectTable" EntityType="Self.ProjectTable" Schema="project" store:Type="Tables" />
+    <EntitySet Name="ProjectUserAssociateTable" EntityType="Self.ProjectUserAssociateTable" Schema="project" store:Type="Tables" />
+    <EntitySet Name="UserAssociationTable" EntityType="Self.UserAssociationTable" Schema="users" store:Type="Tables" />
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="users" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_AccountClaimsTable_dbo_AccountTable_IdentityUser_Id" Association="Self.FK_dbo_AccountClaimsTable_dbo_AccountTable_IdentityUser_Id">
+      <End Role="AccountTable" EntitySet="AccountTable" />
+      <End Role="AccountClaimsTable" EntitySet="AccountClaimsTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AccountLoginTable_dbo_AccountTable_IdentityUser_Id" Association="Self.FK_dbo_AccountLoginTable_dbo_AccountTable_IdentityUser_Id">
+      <End Role="AccountTable" EntitySet="AccountTable" />
+      <End Role="AccountLoginTable" EntitySet="AccountLoginTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AccountUserRoleTable_dbo_AccountRoleTable_RoleId" Association="Self.FK_dbo_AccountUserRoleTable_dbo_AccountRoleTable_RoleId">
+      <End Role="AccountRoleTable" EntitySet="AccountRoleTable" />
+      <End Role="AccountUserRoleTable" EntitySet="AccountUserRoleTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AccountUserRoleTable_dbo_AccountTable_IdentityUser_Id" Association="Self.FK_dbo_AccountUserRoleTable_dbo_AccountTable_IdentityUser_Id">
+      <End Role="AccountTable" EntitySet="AccountTable" />
+      <End Role="AccountUserRoleTable" EntitySet="AccountUserRoleTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FoodDrinkProjectAssignment_FoodDrinkTable" Association="Self.FK_FoodDrinkProjectAssignment_FoodDrinkTable">
+      <End Role="FoodDrinkTable" EntitySet="FoodDrinkTable" />
+      <End Role="FoodDrinkProjectAssignment" EntitySet="FoodDrinkProjectAssignment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FoodDrinkProjectAssignment_ProjectTable" Association="Self.FK_FoodDrinkProjectAssignment_ProjectTable">
+      <End Role="ProjectTable" EntitySet="ProjectTable" />
+      <End Role="FoodDrinkProjectAssignment" EntitySet="FoodDrinkProjectAssignment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FoodDrinkTable_MeasureTable" Association="Self.FK_FoodDrinkTable_MeasureTable">
+      <End Role="MeasureTable" EntitySet="MeasureTable" />
+      <End Role="FoodDrinkTable" EntitySet="FoodDrinkTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FoodDrinkTable_ProviderFoodCoastTable" Association="Self.FK_FoodDrinkTable_ProviderFoodCoastTable">
+      <End Role="ProviderFoodCoastTable" EntitySet="ProviderFoodCoastTable" />
+      <End Role="FoodDrinkTable" EntitySet="FoodDrinkTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleProjectAssociation_ModuleTable" Association="Self.FK_ModuleProjectAssociation_ModuleTable">
+      <End Role="ModuleTable" EntitySet="ModuleTable" />
+      <End Role="ModuleProjectAssociation" EntitySet="ModuleProjectAssociation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleProjectAssociation_ProjectTable" Association="Self.FK_ModuleProjectAssociation_ProjectTable">
+      <End Role="ProjectTable" EntitySet="ProjectTable" />
+      <End Role="ModuleProjectAssociation" EntitySet="ModuleProjectAssociation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaymentTable_AccountTable" Association="Self.FK_PaymentTable_AccountTable">
+      <End Role="AccountTable" EntitySet="AccountTable" />
+      <End Role="PaymentTable" EntitySet="PaymentTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaymentTable_ProjectTable" Association="Self.FK_PaymentTable_ProjectTable">
+      <End Role="ProjectTable" EntitySet="ProjectTable" />
+      <End Role="PaymentTable" EntitySet="PaymentTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaymentTable_WorkAgreementTable" Association="Self.FK_PaymentTable_WorkAgreementTable">
+      <End Role="WorkAgreementTable" EntitySet="WorkAgreementTable" />
+      <End Role="PaymentTable" EntitySet="PaymentTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectTable_FileRepositoryTable" Association="Self.FK_ProjectTable_FileRepositoryTable">
+      <End Role="FileRepositoryTable" EntitySet="FileRepositoryTable" />
+      <End Role="ProjectTable" EntitySet="ProjectTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectUserAssociateTable_AccountTable" Association="Self.FK_ProjectUserAssociateTable_AccountTable">
+      <End Role="AccountTable" EntitySet="AccountTable" />
+      <End Role="ProjectUserAssociateTable" EntitySet="ProjectUserAssociateTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectUserAssociateTable_UserDetails" Association="Self.FK_ProjectUserAssociateTable_UserDetails">
+      <End Role="ProjectTable" EntitySet="ProjectTable" />
+      <End Role="ProjectUserAssociateTable" EntitySet="ProjectUserAssociateTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetails_AccountTable" Association="Self.FK_UserDetails_AccountTable">
+      <End Role="WorkerGroupTable" EntitySet="WorkerGroupTable" />
+      <End Role="UserDetails" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetails_CountryZoneTable" Association="Self.FK_UserDetails_CountryZoneTable">
+      <End Role="CountryZoneTable" EntitySet="CountryZoneTable" />
+      <End Role="UserDetails" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetails_DepartmentTable" Association="Self.FK_UserDetails_DepartmentTable">
+      <End Role="DepartmentTable" EntitySet="DepartmentTable" />
+      <End Role="UserDetails" EntitySet="UserDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

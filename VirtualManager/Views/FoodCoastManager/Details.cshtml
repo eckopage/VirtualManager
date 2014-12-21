@@ -1,0 +1,75 @@
+﻿@model VM.DataAccessLayer.EDM.FoodDrinkProjectAssignment
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_CoreAdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FoodDrinkProjectAssignment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodDrinkPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodDrinkPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsEnabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsEnabled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HowMany)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HowMany)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodDrinkTable.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodDrinkTable.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTable.ProjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTable.ProjectName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

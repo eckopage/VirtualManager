@@ -1,0 +1,199 @@
+﻿@model VM.DataAccessLayer.EDM.UserDetails
+
+@{
+    ViewBag.Title = "Dodawanie pracownika";
+    Layout = "~/Views/Shared/_CoreAdminLayout.cshtml";
+}
+
+<div class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="area-top clearfix">
+                <div class="pull-left header">
+                    <h3 class="title">
+                        <i class="icon-table"></i>
+                        Dodawanie pracownika
+                    </h3>
+                    <h5>
+                        <span>
+                            Uzupełnij potrzebne pola a następnie dodaj użytkownika.
+                        </span>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container padded">
+        <div class="row">
+            <!-- Breadcrumb line -->
+            <div id="breadcrumbs">
+                <div class="breadcrumb-button blue">
+                    <span class="breadcrumb-label"><i class="icon-home"></i> Strona główna</span>
+                    <span class="breadcrumb-arrow"><span></span></span>
+                </div>
+
+                <div class="breadcrumb-button">
+                    <span class="breadcrumb-label">
+                        <i class="icon-beaker"></i> Użytkownik
+                    </span>
+                    <span class="breadcrumb-arrow"><span></span></span>
+                </div>
+
+                <div class="breadcrumb-button">
+                    <span class="breadcrumb-label">
+                        <i class="icon-table"></i> Dodaj użytkownika
+                    </span>
+                    <span class="breadcrumb-arrow"><span></span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-header">
+                        <span class="title">Dane pracownika</span>
+                        <ul class="box-toolbar">
+                            <li>
+                                <i class="icon-user"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="box-content">
+                        @using (Html.BeginForm("Create", "UserDetails", FormMethod.Post, new { @class = "fill-up", @enctype = "multipart/form-data" })) {
+                            @Html.AntiForgeryToken()
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <ul class="padded separate-sections">
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @placeholder = "Imię" } })
+                                        </li>
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.UserSurname, new { htmlAttributes = new { @placeholder = "Nazwisko" } })
+                                        </li>
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.UserEmailContact, new { htmlAttributes = new { @placeholder = "Email" } })
+                                        </li>
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.AccountTable.PasswordHash, new { htmlAttributes = new { @placeholder = "Password", @type = "password" } })
+                                            @*<input type="password" placeholder="Password" />*@
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="note pull-right">Podaj hasło. Hasło może zawierać małe i duże litery oraz znaki specjalne.</div>
+                                        </li>
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.BornDate, new { htmlAttributes = new { @placeholder = "Data urodzenia", @class = "datepicker fill-up" } })
+                                        </li>
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.PESEL, new { htmlAttributes = new { @placeholder = "PESEL" } })
+                                        </li>
+                                        <li>
+                                            <label>Wybierz narodowość:</label>
+                                            <select class="chzn-select" id="Country" name="Country">
+                                                <option value="Polska">Polska</option>
+                                                <option value="Anglia">Anglia</option>
+                                                <option value="Niemcy">Niemcy</option>
+                                                <option value="Rosja">Rosja</option>
+                                                <option value="Inna">Inna</option>
+                                            </select>
+                                        </li>
+                                        <li>
+                                            <label>Wybierz województwo:</label>
+                                            @Html.DropDownList("CountryZone", null, htmlAttributes: new { @class = "chzn-select", @name = "Country" })
+                                        </li>
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.Gmina, new { htmlAttributes = new { @placeholder = "Gmina" } })
+                                        </li>
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.City, new { htmlAttributes = new { @placeholder = "Miasto" } })
+                                        </li>
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.PostalCode, new { htmlAttributes = new { @placeholder = "Kod pocztowy" } })
+                                        </li>
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.Street, new { htmlAttributes = new { @placeholder = "Ulica" } })
+                                        </li>
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.NoHome, new { htmlAttributes = new { @placeholder = "Numer domu" } })
+                                        </li>
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.NoLocal, new { htmlAttributes = new { @placeholder = "Numer mieszkania" } })
+                                        </li>
+                                    </ul>
+
+                                </div>
+                                <div class="col-lg-6">
+                                    <ul class="padded separate-sections">
+
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.UrzadSkarbowyNazwa, new { htmlAttributes = new { @placeholder = "Nazwa urzędu skarbowego" } })
+                                        </li>
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.SymbolUs, new { htmlAttributes = new { @placeholder = "Symbol urzędu skarbowego" } })
+                                        </li>
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.BankBillNo, new { htmlAttributes = new { @placeholder = "Numer konta bankowego" } })
+                                        </li>
+                                        <li class="input">
+                                            @Html.EditorFor(model => model.NFZ_No, new { htmlAttributes = new { @placeholder = "Numer NFZ" } })
+                                        </li>
+                                        <li>
+                                            <label>Wybierz stanowisko:</label>
+                                            @Html.DropDownList("WorkersGroup", null, htmlAttributes: new { @class = "chzn-select", @name = "WorkersGroup" })
+                                        </li>
+                                        <li>
+                                            <label>Wybierz dział:</label>
+                                            @Html.DropDownList("Department", null, htmlAttributes: new { @class = "chzn-select", @name = "Department" })
+                                        </li>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div>
+                                                        <p>
+                                                            Określ płeć:
+                                                        </p>
+                                                        <input type="radio" name="optionsRadios[abc]" class="icheck" checked id="iradio1">
+                                                        <label for="iradio1">Kobieta</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="radio" name="optionsRadios[abc]" class="icheck" id="iradio2">
+                                                        <label for="iradio2">Mężczyzna</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="input">
+                                            <p>
+                                                <i class="icon-picture"></i> Dodaj zdjęcie (Wymagany format pliku: JPEG).
+                                            </p>
+                                            <input type="file" name="file">
+                                        </li>
+                                        <li class="input">
+                                            <textarea placeholder="Dodatkowe informacje o użytkowniku" rows="6"></textarea>
+                                        </li>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="note large">
+                                                        <i class="icon-warning-sign"></i> Uwaga: Uzupełnij podstawowe pola aby dodać użytkownika.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <input type="submit" value="Save" class="btn btn-default" />
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<VM.DataAccessLayer.EDM.FileTable>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CoreAdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FileName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Extension)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FileSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Created)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Updated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UploadedByUserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsVisible)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PathToFile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsFolder)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FileName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Extension)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FileSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Created)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Updated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UploadedByUserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsVisible)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PathToFile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsFolder)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

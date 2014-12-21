@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e1a809dce836430fb4befe6e23d81cc7" Name="Diagram1" ZoomLevel="95" >
+        <EntityTypeShape EntityType="VirtualManagerDatabase.KeyModel" Width="1.5" PointX="7.5" PointY="3.625" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.AccountClaimsTable" Width="1.5" PointX="3" PointY="23.375" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.AccountLoginTable" Width="1.5" PointX="3" PointY="26.25" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.AccountRoleTable" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.AccountTable" Width="1.5" PointX="0.75" PointY="11.25" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.AccountUserRoleTable" Width="1.5" PointX="3" PointY="9.625" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.AlmostAccountTable" Width="1.5" PointX="5.75" PointY="8.5" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.FileRepositoryTable" Width="1.5" PointX="1.5" PointY="1" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.FileTable" Width="1.5" PointX="7.75" PointY="8.5" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.FoodDrinkProjectAssignment" Width="1.5" PointX="7.25" PointY="4.25" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.FoodDrinkTable" Width="1.5" PointX="5" PointY="3.75" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.Key" Width="1.5" PointX="9.75" PointY="2.5" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.MeasureTable" Width="1.5" PointX="2.75" PointY="29.375" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.PaymentTable" Width="1.5" PointX="3" PointY="12.375" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.ProviderFoodCoastTable" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.TemporaryTable" Width="1.5" PointX="9.75" PointY="4.5" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.WorkAgreementTable" Width="1.5" PointX="0.75" PointY="17.375" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.ModuleProjectAssociation" Width="1.5" PointX="4" PointY="0.75" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.ModuleTable" Width="1.5" PointX="1.75" PointY="32.75" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.ProjectTable" Width="1.5" PointX="0.75" PointY="4.125" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.ProjectUserAssociateTable" Width="1.5" PointX="6" PointY="12.25" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.UserAssociationTable" Width="1.5" PointX="9.75" PointY="7.5" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.UserDetails" Width="1.5" PointX="9.25" PointY="17.625" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_dbo_AccountClaimsTable_dbo_AccountTable_IdentityUser_Id" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_dbo_AccountLoginTable_dbo_AccountTable_IdentityUser_Id" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_dbo_AccountUserRoleTable_dbo_AccountRoleTable_RoleId" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_dbo_AccountUserRoleTable_dbo_AccountTable_IdentityUser_Id" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_PaymentTable_AccountTable" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_ProjectUserAssociateTable_AccountTable" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_UserDetails_AccountTable" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_ProjectTable_FileRepositoryTable" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_FoodDrinkProjectAssignment_FoodDrinkTable" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_FoodDrinkProjectAssignment_ProjectTable" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_FoodDrinkTable_MeasureTable" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_FoodDrinkTable_ProviderFoodCoastTable" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_PaymentTable_ProjectTable" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_PaymentTable_WorkAgreementTable" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_ModuleProjectAssociation_ModuleTable" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_ModuleProjectAssociation_ProjectTable" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_ProjectUserAssociateTable_UserDetails" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.DepartmentTable" Width="1.5" PointX="12.875" PointY="15.625" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.WorkerGroupTable" Width="1.5" PointX="10.75" PointY="13.875" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_UserDetails_DepartmentTable" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_UserDetails_AccountTable1" />
+        <EntityTypeShape EntityType="VirtualManagerDatabase.CountryZoneTable" Width="1.5" PointX="6.375" PointY="0.875" />
+        <AssociationConnector Association="VirtualManagerDatabase.FK_UserDetails_CountryZoneTable" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

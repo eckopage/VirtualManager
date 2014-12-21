@@ -1,0 +1,13 @@
+﻿@{
+    var controller = HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"].ToString();
+
+    string layout = "";
+    if (controller == "Registration" || controller == "Account") {
+        layout = "~/Views/Shared/_CoreAdminLogin.cshtml";
+    }
+    else {
+        layout = "~/Views/Shared/_CoreAdminLayout.cshtml";
+    }
+
+    Layout = layout;
+}

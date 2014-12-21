@@ -1,0 +1,8 @@
+C:\Development\virtual-manager\VirtualManager\libLogger\bin\Debug\NLog.config
+C:\Development\virtual-manager\VirtualManager\libLogger\bin\Debug\libLogger.dll
+C:\Development\virtual-manager\VirtualManager\libLogger\bin\Debug\libLogger.pdb
+C:\Development\virtual-manager\VirtualManager\libLogger\bin\Debug\NLog.dll
+C:\Development\virtual-manager\VirtualManager\libLogger\bin\Debug\NLog.xml
+C:\Development\virtual-manager\VirtualManager\libLogger\obj\Debug\libLogger.csprojResolveAssemblyReference.cache
+C:\Development\virtual-manager\VirtualManager\libLogger\obj\Debug\libLogger.dll
+C:\Development\virtual-manager\VirtualManager\libLogger\obj\Debug\libLogger.pdb

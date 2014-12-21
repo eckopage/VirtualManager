@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VirtualManagerDatabaseStoreContainer" CdmEntityContainer="VirtualManagerDatabaseContainer">
+    <EntitySetMapping Name="AccountClaimsTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.AccountClaimsTable">
+        <MappingFragment StoreEntitySet="AccountClaimsTable">
+          <ScalarProperty Name="IdentityUser_Id" ColumnName="IdentityUser_Id" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountLoginTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.AccountLoginTable">
+        <MappingFragment StoreEntitySet="AccountLoginTable">
+          <ScalarProperty Name="IdentityUser_Id" ColumnName="IdentityUser_Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountRoleTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.AccountRoleTable">
+        <MappingFragment StoreEntitySet="AccountRoleTable">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.AccountTable">
+        <MappingFragment StoreEntitySet="AccountTable">
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountUserRoleTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.AccountUserRoleTable">
+        <MappingFragment StoreEntitySet="AccountUserRoleTable">
+          <ScalarProperty Name="IdentityUser_Id" ColumnName="IdentityUser_Id" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlmostAccountTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.AlmostAccountTable">
+        <MappingFragment StoreEntitySet="AlmostAccountTable">
+          <ScalarProperty Name="LinkToken" ColumnName="LinkToken" />
+          <ScalarProperty Name="RegistrationDateTime" ColumnName="RegistrationDateTime" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileRepositoryTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.FileRepositoryTable">
+        <MappingFragment StoreEntitySet="FileRepositoryTable">
+          <ScalarProperty Name="FilesId" ColumnName="FilesId" />
+          <ScalarProperty Name="FileRepoName" ColumnName="FileRepoName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.FileTable">
+        <MappingFragment StoreEntitySet="FileTable">
+          <ScalarProperty Name="IsFolder" ColumnName="IsFolder" />
+          <ScalarProperty Name="PathToFile" ColumnName="PathToFile" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="UploadedByUserId" ColumnName="UploadedByUserId" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodDrinkProjectAssignment">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.FoodDrinkProjectAssignment">
+        <MappingFragment StoreEntitySet="FoodDrinkProjectAssignment">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="HowMany" ColumnName="HowMany" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="FoodDrinkPrice" ColumnName="FoodDrinkPrice" />
+          <ScalarProperty Name="FoodDrinkId" ColumnName="FoodDrinkId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodDrinkTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.FoodDrinkTable">
+        <MappingFragment StoreEntitySet="FoodDrinkTable">
+          <ScalarProperty Name="HowMuch" ColumnName="HowMuch" />
+          <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MeasureId" ColumnName="MeasureId" />
+          <ScalarProperty Name="ShortNameProduct" ColumnName="ShortNameProduct" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Key">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.Key">
+        <MappingFragment StoreEntitySet="Key">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MeasureTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.MeasureTable">
+        <MappingFragment StoreEntitySet="MeasureTable">
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.PaymentTable">
+        <MappingFragment StoreEntitySet="PaymentTable">
+          <ScalarProperty Name="WorkAgreementId" ColumnName="WorkAgreementId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProviderFoodCoastTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.ProviderFoodCoastTable">
+        <MappingFragment StoreEntitySet="ProviderFoodCoastTable">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="BankAccountNo" ColumnName="BankAccountNo" />
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ProviderSurname" ColumnName="ProviderSurname" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TemporaryTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.TemporaryTable">
+        <MappingFragment StoreEntitySet="TemporaryTable">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkAgreementTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.WorkAgreementTable">
+        <MappingFragment StoreEntitySet="WorkAgreementTable">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AgreementTimeTo" ColumnName="AgreementTimeTo" />
+          <ScalarProperty Name="AgreementTimeFrom" ColumnName="AgreementTimeFrom" />
+          <ScalarProperty Name="PerTime" ColumnName="PerTime" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="AgreeementType" ColumnName="AgreeementType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModuleProjectAssociation">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.ModuleProjectAssociation">
+        <MappingFragment StoreEntitySet="ModuleProjectAssociation">
+          <ScalarProperty Name="TurnOn" ColumnName="TurnOn" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModuleTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.ModuleTable">
+        <MappingFragment StoreEntitySet="ModuleTable">
+          <ScalarProperty Name="PathToDLL" ColumnName="PathToDLL" />
+          <ScalarProperty Name="UpdatedDLL" ColumnName="UpdatedDLL" />
+          <ScalarProperty Name="StableVersion" ColumnName="StableVersion" />
+          <ScalarProperty Name="DeveloperName" ColumnName="DeveloperName" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModuleDLLname" ColumnName="ModuleDLLname" />
+          <ScalarProperty Name="ModuleDescription" ColumnName="ModuleDescription" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.ProjectTable">
+        <MappingFragment StoreEntitySet="ProjectTable">
+          <ScalarProperty Name="AvailableModulesId" ColumnName="AvailableModulesId" />
+          <ScalarProperty Name="FileRepositoryId" ColumnName="FileRepositoryId" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="Removed" ColumnName="Removed" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectUserAssociateTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.ProjectUserAssociateTable">
+        <MappingFragment StoreEntitySet="ProjectUserAssociateTable">
+          <ScalarProperty Name="IsOwner" ColumnName="IsOwner" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="RemovedTime" ColumnName="RemovedTime" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAssociationTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.UserAssociationTable">
+        <MappingFragment StoreEntitySet="UserAssociationTable">
+          <ScalarProperty Name="EmployeeGuid" ColumnName="EmployeeGuid" />
+          <ScalarProperty Name="ChiefUserGuid" ColumnName="ChiefUserGuid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.UserDetails">
+        <MappingFragment StoreEntitySet="UserDetails">
+          <ScalarProperty Name="NoHome" ColumnName="NoHome" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="WorkersGroup" ColumnName="WorkersGroup" />
+          <ScalarProperty Name="NFZ_No" ColumnName="NFZ_No" />
+          <ScalarProperty Name="BankBillNo" ColumnName="BankBillNo" />
+          <ScalarProperty Name="UserEmailContact" ColumnName="UserEmailContact" />
+          <ScalarProperty Name="SymbolUs" ColumnName="SymbolUs" />
+          <ScalarProperty Name="UrzadSkarbowyNazwa" ColumnName="UrzadSkarbowyNazwa" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="NoLocal" ColumnName="NoLocal" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Gmina" ColumnName="Gmina" />
+          <ScalarProperty Name="CountryZone" ColumnName="CountryZone" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+          <ScalarProperty Name="BornDate" ColumnName="BornDate" />
+          <ScalarProperty Name="UserSurname" ColumnName="UserSurname" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepartmentTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.DepartmentTable">
+        <MappingFragment StoreEntitySet="DepartmentTable">
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkerGroupTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.WorkerGroupTable">
+        <MappingFragment StoreEntitySet="WorkerGroupTable">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CountryZoneTable">
+      <EntityTypeMapping TypeName="VirtualManagerDatabase.CountryZoneTable">
+        <MappingFragment StoreEntitySet="CountryZoneTable">
+          <ScalarProperty Name="CountryZoneName" ColumnName="CountryZoneName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

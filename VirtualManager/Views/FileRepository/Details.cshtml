@@ -1,0 +1,35 @@
+﻿@model VM.DataAccessLayer.EDM.FileRepositoryTable
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_CoreAdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FileRepositoryTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FileRepoName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FileRepoName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FilesId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FilesId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

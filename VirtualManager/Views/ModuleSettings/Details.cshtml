@@ -1,0 +1,91 @@
+﻿@model VM.DataAccessLayer.EDM.ModuleTable
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_CoreAdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ModuleTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ModuleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModuleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModuleDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModuleDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModuleDLLname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModuleDLLname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Version)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Version)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeveloperName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeveloperName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StableVersion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StableVersion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDLL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDLL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PathToDLL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PathToDLL)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

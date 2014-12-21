@@ -1,0 +1,179 @@
+﻿@model VM.DataAccessLayer.EDM.UserDetails
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_CoreAdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserSurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserSurname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BornDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BornDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PESEL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PESEL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gmina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gmina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Street)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Street)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoHome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoHome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoLocal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoLocal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrzadSkarbowyNazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrzadSkarbowyNazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SymbolUs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SymbolUs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserEmailContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserEmailContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BankBillNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankBillNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NFZ_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NFZ_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountTable.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountTable.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentTable.DepartmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentTable.DepartmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkerGroupTable.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkerGroupTable.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryZoneTable.CountryZoneName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountryZoneTable.CountryZoneName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

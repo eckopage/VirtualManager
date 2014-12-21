@@ -1,0 +1,75 @@
+﻿@model VM.DataAccessLayer.EDM.FoodDrinkTable
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_CoreAdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FoodDrinkTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortNameProduct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortNameProduct)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhotoPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HowMuch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HowMuch)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MeasureTable.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeasureTable.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderFoodCoastTable.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProviderFoodCoastTable.CompanyName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

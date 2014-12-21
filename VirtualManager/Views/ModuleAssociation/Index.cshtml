@@ -1,0 +1,46 @@
+﻿@model IEnumerable<VM.DataAccessLayer.EDM.ModuleProjectAssociation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CoreAdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TurnOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModuleTable.ModuleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectTable.ProjectName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TurnOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModuleTable.ModuleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectTable.ProjectName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
